@@ -68,8 +68,18 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
   nav.appendChild(liste);
   ziel.insertBefore(nav, ziel.querySelector("h2"));
 
-  /* Direktlink wie index.html#paragraf-12 ansteuern */
-  if (location.hash) {
+  /* Beim Neuladen immer ganz oben starten: Browser soll die alte
+     Scrollposition nicht wiederherstellen, und ein #Sprungziel aus dem
+     Inhaltsverzeichnis wird aus der Adresse entfernt */
+  var navigation = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+  var neuGeladen = navigation && navigation.type === "reload";
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+  if (neuGeladen) {
+    if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+    window.scrollTo({ top: 0, behavior: "instant" });
+  } else if (location.hash) {
+    /* Direktlink wie index.html#paragraf-12 ansteuern */
     var sprungziel = document.getElementById(decodeURIComponent(location.hash.slice(1)));
     if (sprungziel) sprungziel.scrollIntoView();
   }
