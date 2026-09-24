@@ -58,7 +58,7 @@ body {
 /* ---------- Regelwerk ---------- */
 
 .regelwerk {
-  --karte: #ffffff;
+  --karte: rgb(250 233 233);
   --schwarz: #000000;
   --grau: #8a8a8e;
   --linie: #e0e0e0;
@@ -90,7 +90,7 @@ body {
   min-width: 3.2em;
   padding: 2px 6px;
   border-radius: 6px;
-  background: var(--schwarz);
+  background: #db3c3c;
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
@@ -107,8 +107,8 @@ body {
   margin: 24px 0 40px;
   padding: 20px 16px 8px;
   border-radius: 14px;
-  border-style: dashed;
-  border-color: black;
+
+  border-color: #000000;
   background: var(--karte);
   color: var(--schwarz);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
@@ -246,7 +246,7 @@ body {
 
 .regelwerk a.verweis:hover,
 .regelwerk a.verweis:active {
-  background: var(--schwarz);
+  background: #454545;
   color: #ffffff;
 }
 

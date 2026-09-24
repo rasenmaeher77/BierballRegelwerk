@@ -286,16 +286,13 @@ III. Können sich die Spieler bei der Entscheidung nach §23 Abs. II nicht einig
 
 ## Anhang
 
-### Sprachliche Gleichstellung
-
+Sprachliche Gleichstellung:
 Aus Gründen der besseren Lesbarkeit wird in diesem Regelwerk das generische Maskulinum verwendet. Alle Personenbezeichnungen gelten gleichermaßen für alle Geschlechter.
 
-### Teilnahme auf eigene Verantwortung
-
+Teilnahme auf eigene Verantwortung:
 Die Teilnahme ist freiwillig und erfolgt auf eigene Gefahr. Der Verfasser haftet nicht für Personen-, Sach- oder sonstige Schäden, die bei der Anwendung dieses Regelwerks entstehen, soweit dies gesetzlich zulässig ist.
 
-### Urheber und Version
-
+Urheber und Version:
 Bierball Regelwerk · Version 1.0 · Stand: 16. September 2026 · Berlin
 Verfasser: BlackDemon_030 & Jungle_raven777
 `;
