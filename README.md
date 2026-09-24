@@ -1,4 +1,4 @@
-# Mischa App
+# Bierball Regelwerk
 
 Leere, für das iPhone optimierte Web-App-Vorlage (HTML, CSS, JavaScript, keine Frameworks).
 
