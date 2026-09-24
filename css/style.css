@@ -63,7 +63,7 @@ body {
   --grau: #8a8a8e;
   --linie: #e0e0e0;
   --chip: rgba(0, 0, 0, 0.08);
-  --hervor: #bf3406;
+  --hervor: #ffffff;
 
   width: 100%;
   max-width: 720px;
@@ -186,7 +186,7 @@ body {
 
 @keyframes aufleuchten {
   0%, 40% { background: var(--hervor); transform: scale(1.12); }
-  100%    { background: var(--schwarz); transform: scale(1); }
+    100%    { background: #db3c3c; transform: scale(1); }
 }
 
 /* Absätze I., II., III. */
