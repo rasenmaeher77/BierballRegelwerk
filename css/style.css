@@ -107,6 +107,8 @@ body {
   margin: 24px 0 40px;
   padding: 20px 16px 8px;
   border-radius: 14px;
+  border-style: dashed;
+  border-color: black;
   background: var(--karte);
   color: var(--schwarz);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
