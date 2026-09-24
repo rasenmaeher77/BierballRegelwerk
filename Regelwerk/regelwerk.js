@@ -248,7 +248,7 @@ V. Der Ausgleichspunkt hat keine Auswirkung auf den Spielausgang. Seine Berücks
 I. Dieses Regelwerk tritt mit der Veröffentlichung der Erstfassung in Kraft.
 II. Änderungen und Erweiterungen werden mit einer neuen Versionsnummer und einem neuen Stand-Datum kenntlich gemacht. Es gilt jeweils die aktuellste Fassung.
 
-## Ergaenzende Spielregeln (2 Pers.)
+## Ergänzende Spielregeln (2 Pers.)
 
 ### §40 Anwendungsbereich
 
