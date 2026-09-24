@@ -6,3 +6,71 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
     });
   });
 }
+
+/* Regelwerk anzeigen (Text steht in Regelwerk/regelwerk.js) */
+(function () {
+  var ziel = document.getElementById("regelwerk");
+  if (!ziel || !window.REGELWERK) return;
+
+  ziel.innerHTML = Markdown.render(window.REGELWERK);
+
+  /* Inhaltsverzeichnis aus den Überschriften (## und ###) */
+  var nav = document.createElement("nav");
+  nav.className = "inhaltsverzeichnis";
+  nav.setAttribute("aria-label", "Inhaltsverzeichnis");
+
+  var liste = document.createElement("ul");
+  var aktuellerAbschnitt = null;
+
+  function span(klasse, text) {
+    var element = document.createElement("span");
+    element.className = klasse;
+    element.textContent = text;
+    return element;
+  }
+
+  /* "§12 Treffer, Trinken" -> Nummer und Titel getrennt (für die Optik) */
+  function fuelle(element, nr, titel) {
+    element.textContent = "";
+    if (nr !== null) element.append(span("nr", nr), " ");
+    element.append(span("titel", titel));
+  }
+
+  ziel.querySelectorAll("h2, h3").forEach(function (ueberschrift) {
+    var teile = ueberschrift.textContent.match(/^(§\s?\d+)\s+(.*)$/);
+    var nr = teile ? teile[1] : null;
+    var titel = teile ? teile[2] : ueberschrift.textContent;
+
+    var eintrag = document.createElement("li");
+    var link = document.createElement("a");
+    link.href = "#" + ueberschrift.id;
+    /* Unterpunkte ohne § bekommen eine leere Nummer, damit alles bündig bleibt */
+    fuelle(link, ueberschrift.tagName === "H3" && nr === null ? "" : nr, titel);
+    eintrag.appendChild(link);
+    if (nr !== null) fuelle(ueberschrift, nr, titel);
+
+    if (ueberschrift.tagName === "H2" || !aktuellerAbschnitt) {
+      liste.appendChild(eintrag);
+      aktuellerAbschnitt = ueberschrift.tagName === "H2" ? eintrag : null;
+    } else {
+      var unterliste = aktuellerAbschnitt.querySelector("ul");
+      if (!unterliste) {
+        unterliste = document.createElement("ul");
+        aktuellerAbschnitt.appendChild(unterliste);
+      }
+      unterliste.appendChild(eintrag);
+    }
+  });
+
+  var titel = document.createElement("h2");
+  titel.textContent = "Inhaltsverzeichnis";
+  nav.appendChild(titel);
+  nav.appendChild(liste);
+  ziel.insertBefore(nav, ziel.querySelector("h2"));
+
+  /* Direktlink wie index.html#paragraf-12 ansteuern */
+  if (location.hash) {
+    var sprungziel = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (sprungziel) sprungziel.scrollIntoView();
+  }
+})();

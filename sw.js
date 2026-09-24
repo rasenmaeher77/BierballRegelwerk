@@ -5,13 +5,17 @@
    Neue Dateien (z. B. Bilder) in FILES eintragen.
    ========================================================= */
 
-const CACHE = "mischa-app-v3";
+const CACHE = "mischa-app-v4";
 
 const FILES = [
   "./",
   "./index.html",
   "./css/style.css",
   "./js/app.js",
+  "./js/markdown.js",
+  "./Regelwerk/regelwerk.js",
+  "./Regelwerk/spielfeld.svg",
+  "./Regelwerk/Bierball%20Regelwerk%20Version%201.0.pdf",
   "./manifest.webmanifest",
   "./icons/apple-touch-icon.png",
   "./icons/icon-192.png",

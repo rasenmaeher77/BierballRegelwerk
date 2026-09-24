@@ -24,15 +24,22 @@
 </head>
 <body>
   <main class="app">
-    <h1 class="text">Mischa App</h1>
-
-    <div class="buttons">
-      <button id="button1">Einstellungen</button>
-      <button id="button2">Nachricht von Mischa bekommen!</button>
+    <div class="kasten">
+      <h1 class="ueberschrift">Bierball Regelwerk</h1>
     </div>
+
+
+    <!-- Wird aus Regelwerk/regelwerk.js befüllt -->
+    <article id="regelwerk" class="regelwerk"></article>
+
+    <p class="pdf-download">
+      <a href="Regelwerk/Bierball%20Regelwerk%20Version%201.0.pdf" download>Regelwerk als PDF herunterladen</a>
+    </p>
 
   </main>
 
+  <script src="Regelwerk/regelwerk.js"></script>
+  <script src="js/markdown.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
