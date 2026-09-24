@@ -116,7 +116,7 @@ body {
 
 .regelwerk .inhaltsverzeichnis h2 {
   margin: 0 0 8px;
-  font-family: "Mischa-Font", sans-serif;
+  font-family: Impact, sans-serif;
   font-size: 32px;
   font-weight: normal;
 }
@@ -165,7 +165,7 @@ body {
   margin: 40px 0 12px;
   /* Zeilen gleichmäßig umbrechen, z. B. kein einzelnes "(2" am Zeilenende */
   text-wrap: balance;
-  font-family: "Mischa-Font", sans-serif;
+  font-family: Impact, sans-serif;
   font-size: 32px;
   font-weight: normal;
 }
