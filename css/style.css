@@ -1,0 +1,106 @@
+/* Leere Vorlage – optimiert für iPhone (Safari & Home-Bildschirm-App) */
+
+:root {
+  --bg: #e59b65;
+  --text: #e23c12;
+
+  /* Abstände für Notch, Dynamic Island und Home-Indikator */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #bf3406;
+    --text: #f2f2f7;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background: linear-gradient(135deg, rgb(255 0 0 / 0.62), rgb(255 196 0 / 0.8), rgb(255 221 0 / 0.62));
+  background-size: 300% 300%;
+  animation: bewegung 10s ease infinite;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  font-size: 17px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+@keyframes bewegung {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left);
+
+  /* Zentriert alle Kinder (Text, Buttons) untereinander in der Mitte */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Verhindert Zoomen beim Antippen von Eingabefeldern (iOS zoomt bei < 16px) */
+input, select, textarea, button {
+  font: inherit;
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: 'Mischa-Font';
+  src: url("../Schriftarten/BADABB__.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.text {
+  position: relative;   /* oder absolute / fixed / sticky */
+  z-index: -1;
+  font-family: "Mischa-Font", sans-serif;
+  color: #bc5e2b;
+  font-size: 100px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: Impact, sans-serif;
+  font-size: 45px;
+}
+
+.buttons button {
+  border-color: #ac3700;
+  border-radius: 2px;
+  background-color: #ffeba9;
+  border-style: hidden;
+  border-spacing: 15px;
+  color: #ac3700;
+}
+
+.buttons button:hover {
+  color: red;
+}
